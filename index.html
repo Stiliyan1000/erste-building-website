@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ерсте Билдинг — Строителна компания</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DXK2JW2BQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DXK2JW2BQW');
+</script>
+<meta name="description" content="Ерсте Билдинг — жилищно строителство и довършителни работи в Бургас. Пълен строителен цикъл от изкопни работи до строителство до ключ.">
+<!-- TODO: замени "https://ВАШИЯ-ДОМЕЙН.bg/" по-долу с реалния домейн на сайта, когато е готов -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ерсте Билдинг">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:title" content="Ерсте Билдинг — Строителна компания в Бургас">
+<meta property="og:description" content="Жилищно строителство и довършителни работи в Бургас. Пълен строителен цикъл от изкопни работи до строителство до ключ.">
+<meta property="og:image" content="https://ВАШИЯ-ДОМЕЙН.bg/assets/hero.jpg">
+<meta property="og:url" content="https://ВАШИЯ-ДОМЕЙН.bg/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ерсте Билдинг — Строителна компания в Бургас">
+<meta name="twitter:description" content="Жилищно строителство и довършителни работи в Бургас. Пълен строителен цикъл от изкопни работи до строителство до ключ.">
+<meta name="twitter:image" content="https://ВАШИЯ-ДОМЕЙН.bg/assets/hero.jpg">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Ерсте Билдинг ЕООД",
+  "image": "assets/logo-mark.png",
+  "description": "Строителна компания в Бургас, специализирана в жилищно строителство и довършителни работи.",
+  "telephone": "+359896232969",
+  "email": "erstebuilding@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "жк. Славейков, блок 160, вход Г",
+    "addressLocality": "Бургас",
+    "addressCountry": "BG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.5048,
+    "longitude": 27.4626
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "areaServed": "Бургас"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <img src="assets/logo-mark.png" alt="Ерсте Билдинг">
+      <span class="brand-text">
+        <span class="brand-name" data-i18n="brand">ЕРСТЕ БИЛДИНГ</span>
+        <span class="brand-sub" data-i18n="brandSub">СТРОИТЕЛНА КОМПАНИЯ</span>
+      </span>
+    </a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link" data-i18n="navHome">Начало</a>
+        <a href="#about" class="nav-link" data-i18n="navAbout">За нас</a>
+        <a href="#projects" class="nav-link" data-i18n="navProjects">Обекти</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">Контакти</a>
+      </nav>
+      <span class="lang-toggle">
+        <button class="lang-btn" id="lang-bg" type="button">BG</button>
+        <button class="lang-btn" id="lang-en" type="button">EN</button>
+      </span>
+      <a href="#contact" class="nav-cta" data-i18n="navCta">Заяви оглед</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<div class="page" id="page-home">
+  <div class="hero">
+    <img class="hero-bg" src="assets/hero.jpg" alt="">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="kicker" data-i18n="heroKicker">БУРГАС — ЖИЛИЩНО СТРОИТЕЛСТВО И ДОВЪРШИТЕЛНИ РАБОТИ</div>
+      <h1>
+        <span data-i18n="heroA">Изграждаме</span>
+        <em class="accent" data-i18n="heroEm">доверие</em><br>
+        <span data-i18n="heroB">етаж по етаж.</span>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-lead" data-i18n="heroLead">Пълен строителен цикъл — от изкопни работи до строителство до ключ. Точна оферта, реалистичен график и пряка връзка с управителя от първия ден.</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-gold" data-i18n="heroBtn1">Разгледай обектите</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="heroBtn2">Свържете се с нас</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>2024</b><span data-i18n="stat1">Година на създаване</span></div>
+    <div class="stat"><b>100%</b><span data-i18n="stat2">Пряк контакт с управителя</span></div>
+    <div class="stat"><b>4</b><span data-i18n="stat3">Основни услуги</span></div>
+  </div>
+
+  <div class="section">
+    <h2><span data-i18n="svcTitle">Услуги</span> <em class="accent" data-i18n="svcTitleEm">— целият процес</em></h2>
+    <div class="grid-cards">
+      <div class="card">
+        <div class="idx">01</div>
+        <h3 data-i18n="svc1">Жилищно строителство</h3>
+        <p data-i18n="svc1d">Еднофамилни къщи и жилищни сгради — от груб строеж до финалните довършителни детайли.</p>
+      </div>
+      <div class="card">
+        <div class="idx">02</div>
+        <h3 data-i18n="svc2">Груб строеж</h3>
+        <p data-i18n="svc2d">Фундамент, зидария, стоманобетонни конструкции и покривна конструкция — здрава основа за всеки обект.</p>
+      </div>
+      <div class="card">
+        <div class="idx">03</div>
+        <h3 data-i18n="svc3">Реконструкция и основен ремонт</h3>
+        <p data-i18n="svc3d">Обновяване и укрепване на съществуващи сгради, включително конструктивни промени.</p>
+      </div>
+      <div class="card">
+        <div class="idx">04</div>
+        <h3 data-i18n="svc4">Довършителни работи</h3>
+        <p data-i18n="svc4d">Машинна мазилка, замазка, шпакловка, боядисване и гипсокартон — до пълна готовност за нанасяне.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="process-section blueprint">
+    <div class="section">
+      <div class="kicker" data-i18n="procKicker">КАК РАБОТИМ</div>
+      <h2 style="margin-bottom:44px" data-i18n="procTitle">Процесът стъпка по стъпка</h2>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3 data-i18n="proc1">Проектиране</h3><p data-i18n="proc1d">Обсъждаме идеята, оглеждаме терена и изготвяме идеен проект и точна оферта.</p></div>
+        <div class="step"><div class="num">02</div><h3 data-i18n="proc2">Разрешителни</h3><p data-i18n="proc2d">Съдействаме при съгласуването на проекта и издаването на разрешение за строеж.</p></div>
+        <div class="step"><div class="num">03</div><h3 data-i18n="proc3">Строителство</h3><p data-i18n="proc3d">Изпълнение с редовна отчетност и контрол на качеството на всеки етап.</p></div>
+        <div class="step"><div class="num">04</div><h3 data-i18n="proc4">Предаване</h3><p data-i18n="proc4d">Финален оглед, отстраняване на забележки и приемо-предавателен протокол.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-section">
+    <div class="section">
+      <div class="kicker" data-i18n="faqKicker">ЧЕСТИ ВЪПРОСИ</div>
+      <h2 style="margin-bottom:36px" data-i18n="faqTitle">Преди да ни пишете</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary><span data-i18n="faq1q">Нова фирма сте — защо да ви се доверя?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p data-i18n="faq1a">Основани сме през 2024 г., но именно затова влагаме максимално старание във всеки обект — той е нашата визитка за следващите. Работите с нас директно, без посредници, и следите напредъка лично.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq2q">Колко ще ми струва проектът?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p data-i18n="faq2a">Всеки обект е различен, затова изготвяме индивидуална оферта след безплатен оглед — с ясна разбивка на разходите и без скрити такси.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq3q">Занимавате ли се с издаването на разрешение за строеж?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p data-i18n="faq3a">Да, съдействаме при съгласуването на проекта и издаването на всички необходими разрешителни — не се налага сами да обикаляте инстанции.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq4q">Колко време отнема един проект?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p data-i18n="faq4a">Зависи от обема на строителството. При огледа изготвяме реалистичен график, който след това стриктно спазваме — без изненади в последния момент.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq5q">Работите ли извън Бургас?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p data-i18n="faq5a">В момента се фокусираме основно върху Бургас и региона, но в зависимост от обема на работата приемаме проекти и в София — свържете се с нас, за да проверим дали можем да поемем вашия обект.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span data-i18n="faq6q">Как се извършва плащането?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <p data-i18n="faq6a">Плащането е на етапи, обвързани с напредъка на строителството — уточнява се ясно в договора преди старта, без предварителни изненади.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <h2 data-i18n="ctaTitle">Имате идея за обект? Да я обсъдим.</h2>
+      <a href="#contact" class="cta-band-btn"><span data-i18n="ctaBtn">Заяви консултация</span> →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" id="page-about">
+  <div class="page-hero blueprint">
+    <div class="wrap">
+      <div class="kicker" data-i18n="abKicker">ЗА НАС</div>
+      <h1><span data-i18n="abTitle">Нова компания.</span> <em class="accent" data-i18n="abTitleEm">Сериозни намерения.</em></h1>
+    </div>
+  </div>
+
+  <div class="about-band">
+    <div class="gold-panel about-facts">
+      <div class="fig-title" data-i18n="abFigTitle">Фирмени данни</div>
+      <div class="fig-name" data-i18n="abFigName">Ерсте Билдинг ЕООД</div>
+      <div class="fig-details">
+        <div data-i18n="abFigEik">ЕИК: 207940283</div>
+        <div data-i18n="abFigFounded">Основана: 2024 г.</div>
+        <div data-i18n="abFigSpec">Жилищно строителство и довършителни работи</div>
+      </div>
+      <div class="coords">42.5048° N, 27.4626° E — <span data-i18n="abFigCity">БУРГАС, БЪЛГАРИЯ</span></div>
+    </div>
+    <div class="about-copy">
+      <p data-i18n="abP1">Ерсте Билдинг е строителна компания, основана през 2024 г. в Бургас, специализирана в жилищно строителство и довършителни работи. Стартираме с ясна цел — коректно, качествено и прозрачно строителство за всеки клиент, независимо дали обектът е малка къща или голяма сграда.</p>
+      <p data-i18n="abP2">Нямаме зад гърба си дълга история, но имаме нещо по-важно — отговорен подход към всеки обект: точна оферта, реалистичен график и постоянна комуникация с възложителя от първия ден.</p>
+      <p data-i18n="abP3">Вярваме, че доверието се печели с първия обект, а не с реклама. Затова влагаме максимално внимание във всеки детайл — от избора на материали до последната довършителна дейност.</p>
+    </div>
+  </div>
+
+  <div class="values-section">
+    <div class="section">
+      <div class="kicker" data-i18n="valKicker">ПРИНЦИПИ</div>
+      <h2 style="margin-bottom:40px" data-i18n="valTitle">На какво държим</h2>
+      <div class="values-grid">
+        <div class="value-card"><h3 data-i18n="val1">Качество</h3><p data-i18n="val1d">Проверени материали и строги технологични изисквания на всеки етап.</p></div>
+        <div class="value-card"><h3 data-i18n="val2">Срокове</h3><p data-i18n="val2d">Реалистичен график преди старта — и стриктно спазван по време на строителството.</p></div>
+        <div class="value-card"><h3 data-i18n="val3">Прозрачност</h3><p data-i18n="val3d">Ясна оферта без скрити разходи и редовна отчетност пред възложителя.</p></div>
+        <div class="value-card"><h3 data-i18n="val4">Безопасност</h3><p data-i18n="val4d">Стриктни правила за безопасност на площадката — за екипа и за всички на обекта.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-section">
+    <div class="section">
+      <div class="kicker" data-i18n="whyKicker">ЗАЩО НИЕ</div>
+      <h2 style="margin-bottom:14px" data-i18n="whyTitle">Какво получавате с нас</h2>
+      <p class="why-lead" data-i18n="whyLead">Като нова компания влагаме максимално старание във всеки обект — защото той е нашата визитка за следващия.</p>
+      <div class="grid-cards">
+        <div class="card"><h3 data-i18n="why1">Пряк контакт</h3><p data-i18n="why1d">Общувате директно с управителя и екипа по обекта — без посредници и бавни отговори.</p></div>
+        <div class="card"><h3 data-i18n="why2">Гъвкавост</h3><p data-i18n="why2d">Малкият ни екип се съобразява с конкретните нужди и график на всеки клиент.</p></div>
+        <div class="card"><h3 data-i18n="why3">Честна цена</h3><p data-i18n="why3d">Детайлна оферта с ясна разбивка — без скрити такси и изненади по средата на строежа.</p></div>
+        <div class="card"><h3 data-i18n="why4">Лична отговорност</h3><p data-i18n="why4d">Всеки обект е приоритет — репутацията ни се гради с всеки завършен строеж.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROJECTS ============ -->
+<div class="page" id="page-projects">
+  <div class="page-hero blueprint">
+    <div class="wrap">
+      <div class="kicker" data-i18n="prjKicker">ПОРТФОЛИО</div>
+      <h1 style="margin-bottom:20px"><span data-i18n="prjTitle">Нашите</span> <em class="accent" data-i18n="prjTitleEm">обекти</em></h1>
+      <p class="lead" data-i18n="prjLead">Работим по първите си проекти. Тук ще добавяме снимки и детайли от всеки обект — етап по етап.</p>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top:70px;padding-bottom:90px">
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span data-i18n="prjPhoto1">Снимка от обекта — очаквайте скоро</span>
+        </div>
+        <div class="project-body">
+          <div class="project-row">
+            <span class="project-tag">№ 001 — <span data-i18n="prjTag1">В ПРОЦЕС</span></span>
+            <span class="stamp active" data-i18n="prjStamp1">АКТИВЕН</span>
+          </div>
+          <h3 data-i18n="prjC1">Първи обект — жилищна сграда</h3>
+          <p data-i18n="prjC1d">Строителството върви по график. Следете напредъка тук.</p>
+          <div class="progress-label" data-i18n="prjProgress">Прогрес по обекта</div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+          <div class="progress-stage" data-i18n="prjStage">Етап: полагане на основи</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span data-i18n="prjPhoto2">Снимка предстои</span>
+        </div>
+        <div class="project-body">
+          <div class="project-row">
+            <span class="project-tag">№ 002</span>
+            <span class="stamp" data-i18n="prjStamp2">ПРЕДСТОИ</span>
+          </div>
+          <h3 data-i18n="prjC2">Предстоящ обект</h3>
+          <p data-i18n="prjC2d">Скоро ще обявим детайли за следващия ни проект.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span data-i18n="prjPhoto3">Свободно място</span>
+        </div>
+        <div class="project-body">
+          <div class="project-row">
+            <span class="project-tag">№ 003</span>
+            <span class="stamp" data-i18n="prjStamp2">ПРЕДСТОИ</span>
+          </div>
+          <h3 data-i18n="prjC3">Вашият проект?</h3>
+          <p data-i18n="prjC3d">Това място е запазено за вашата идея — свържете се с нас.</p>
+        </div>
+      </div>
+    </div>
+    <div class="projects-outro">
+      <p data-i18n="prjOutro">Имате идея за обект? С радост ще я обсъдим и ще подготвим оферта.</p>
+      <a href="#contact" class="btn btn-gold" data-i18n="heroBtn2">Свържете се с нас</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="page-contact">
+  <div class="page-hero blueprint">
+    <div class="wrap">
+      <div class="kicker" data-i18n="conKicker">КОНТАКТИ</div>
+      <h1 style="margin-bottom:20px"><span data-i18n="conTitle">Да обсъдим</span> <em class="accent" data-i18n="conTitleEm">вашия обект</em></h1>
+      <p class="lead" data-i18n="conLead">Свържете се с нас за оглед и оферта — отговаряме в рамките на работния ден.</p>
+    </div>
+  </div>
+
+  <div class="contact-band">
+    <div class="gold-panel contact-facts">
+      <div class="contact-list">
+        <div class="contact-item"><div class="lbl" data-i18n="conAddrL">Адрес</div><div class="val" data-i18n="conAddr">жк. Славейков, блок 160, вход Г, гр. Бургас, България</div></div>
+        <div class="contact-item"><div class="lbl" data-i18n="conPhoneL">Телефон</div><div class="val"><a href="tel:+359896232969">+359 89 623 2969</a></div></div>
+        <div class="contact-item"><div class="lbl" data-i18n="conEmailL">Имейл</div><div class="val"><a href="mailto:erstebuilding@gmail.com">erstebuilding@gmail.com</a></div></div>
+        <div class="contact-item"><div class="lbl" data-i18n="conHoursL">Работно време</div><div class="val"><span data-i18n="conDays">Пон – Пет</span> · 09:00 – 17:00</div></div>
+      </div>
+      <div class="coords">42.5048° N, 27.4626° E</div>
+    </div>
+    <form class="contact-form" id="contact-form" novalidate>
+      <input type="hidden" name="access_key" value="0ec13647-6bac-4efc-9695-39f7077f867b">
+      <input type="hidden" name="subject" value="Ново запитване от сайта — Ерсте Билдинг">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <label for="cf-name" data-i18n="fName">Име</label>
+        <input id="cf-name" name="name" type="text" required>
+      </div>
+      <div class="form-row-2">
+        <div>
+          <label for="cf-phone" data-i18n="fPhone">Телефон</label>
+          <input id="cf-phone" name="phone" type="tel">
+        </div>
+        <div>
+          <label for="cf-email" data-i18n="fEmail">Имейл</label>
+          <input id="cf-email" name="email" type="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="cf-msg" data-i18n="fMsg">Съобщение</label>
+        <textarea id="cf-msg" name="message" rows="5" required data-i18n-placeholder="fMsgPh" placeholder="Разкажете накратко за обекта..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold" id="cf-submit" data-i18n="fSubmit">Изпрати запитване</button>
+      <p class="form-note" data-i18n="fNote">Запитването се изпраща директно на нашия имейл.</p>
+      <p class="form-status" id="cf-status"></p>
+    </form>
+  </div>
+  <div class="map-section">
+    <div class="map-head">
+      <div class="kicker" data-i18n="mapKicker">КЪДЕ ДА НИ НАМЕРИТЕ</div>
+      <span class="map-coords">42.5048° N, 27.4626° E</span>
+    </div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=%D0%B6%D0%BA.%20%D0%A1%D0%BB%D0%B0%D0%B2%D0%B5%D0%B9%D0%BA%D0%BE%D0%B2%2C%20%D0%B1%D0%BB%D0%BE%D0%BA%20160%2C%20%D0%B1%D1%83%D1%80%D0%B3%D0%B0%D1%81&output=embed" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map — Burgas"></iframe>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo-mark.png" alt="">
+        <span class="brand-text">
+          <span class="brand-name" data-i18n="brand">ЕРСТЕ БИЛДИНГ</span>
+          <span class="brand-sub" data-i18n="brandSub">СТРОИТЕЛНА КОМПАНИЯ</span>
+        </span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#home" data-i18n="navHome">Начало</a>
+        <a href="#about" data-i18n="navAbout">За нас</a>
+        <a href="#projects" data-i18n="navProjects">Обекти</a>
+        <a href="#contact" data-i18n="navContact">Контакти</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footCopy">© 2026 Ерсте Билдинг ЕООД. Всички права запазени.</span>
+      <span>42.5048° N, 27.4626° E — <span data-i18n="abFigCity">БУРГАС, БЪЛГАРИЯ</span></span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-stack">
+  <a href="viber://chat?number=%2B359896232969" class="fab-btn fab-viber" aria-label="Viber">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2h-1l-3 3v-3H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2z"/></svg>
+  </a>
+  <a href="tel:+359896232969" class="fab-btn fab-call" aria-label="+359 89 623 2969">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
