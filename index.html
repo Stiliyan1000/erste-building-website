@@ -313,20 +313,21 @@
   <div class="section" style="padding-top:70px;padding-bottom:90px">
     <div class="projects-grid">
       <div class="project-card">
-        <div class="project-photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span data-i18n="prjPhoto1">Снимка от обекта — очаквайте скоро</span>
-        </div>
+        <button type="button" class="project-photo gallery-cover" data-gallery="obekt-1" aria-label="Разгледай галерията">
+          <img src="assets/projects/obekt-1/01.jpg" alt="Топлоизолация на сграда — снимка от обекта" loading="lazy">
+          <span class="gallery-hover" data-i18n="galView">Разгледай галерията</span>
+          <span class="gallery-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h3l2-3h8l2 3h3v13H3z"/><circle cx="12" cy="13" r="4"/></svg>8</span>
+        </button>
         <div class="project-body">
           <div class="project-row">
-            <span class="project-tag">№ 001 — <span data-i18n="prjTag1">В ПРОЦЕС</span></span>
+            <span class="project-tag" data-i18n="prjTag1">В ПРОЦЕС</span>
             <span class="stamp active" data-i18n="prjStamp1">АКТИВЕН</span>
           </div>
-          <h3 data-i18n="prjC1">Първи обект — жилищна сграда</h3>
+          <h3 data-i18n="prjC1">Топлоизолация на сграда</h3>
           <p data-i18n="prjC1d">Строителството върви по график. Следете напредъка тук.</p>
           <div class="progress-label" data-i18n="prjProgress">Прогрес по обекта</div>
           <div class="progress-bar"><div class="progress-fill"></div></div>
-          <div class="progress-stage" data-i18n="prjStage">Етап: полагане на основи</div>
+          <div class="progress-stage" data-i18n="prjStage">В процес</div>
         </div>
       </div>
       <div class="project-card">
@@ -335,8 +336,7 @@
           <span data-i18n="prjPhoto2">Снимка предстои</span>
         </div>
         <div class="project-body">
-          <div class="project-row">
-            <span class="project-tag">№ 002</span>
+          <div class="project-row project-row-end">
             <span class="stamp" data-i18n="prjStamp2">ПРЕДСТОИ</span>
           </div>
           <h3 data-i18n="prjC2">Предстоящ обект</h3>
@@ -349,8 +349,7 @@
           <span data-i18n="prjPhoto3">Свободно място</span>
         </div>
         <div class="project-body">
-          <div class="project-row">
-            <span class="project-tag">№ 003</span>
+          <div class="project-row project-row-end">
             <span class="stamp" data-i18n="prjStamp2">ПРЕДСТОИ</span>
           </div>
           <h3 data-i18n="prjC3">Вашият проект?</h3>
@@ -524,6 +523,14 @@
     </div>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lightbox-close" id="lb-close" aria-label="Затвори">×</button>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Предишна снимка">‹</button>
+  <img class="lightbox-img" id="lb-img" src="" alt="Снимка от обекта">
+  <button type="button" class="lightbox-nav lightbox-next" id="lb-next" aria-label="Следваща снимка">›</button>
+  <div class="lightbox-count" id="lb-count"></div>
+</div>
 
 <div class="fab-stack">
   <a href="viber://chat?number=%2B359896232969" class="fab-btn fab-viber" aria-label="Viber">

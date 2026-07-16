@@ -116,6 +116,79 @@
   setupForm('contact-form', 'cf-submit', 'cf-status', 'fSubmit');
   setupForm('visit-form', 'vf-submit', 'vf-status', 'vfSubmit');
 
+  // ---- Project gallery lightbox ----
+  const GALLERIES = {
+    'obekt-1': ['01', '02', '03', '04', '05', '06', '07', '08'].map(function (n) {
+      return 'assets/projects/obekt-1/' + n + '.jpg';
+    })
+  };
+
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) {
+    const lbImg = document.getElementById('lb-img');
+    const lbCount = document.getElementById('lb-count');
+    let list = [];
+    let idx = 0;
+
+    function preload(i) {
+      const im = new Image();
+      im.src = list[(i + list.length) % list.length];
+    }
+
+    function show(i) {
+      idx = (i + list.length) % list.length;
+      lbImg.src = list[idx];
+      lbCount.textContent = (idx + 1) + ' / ' + list.length;
+      preload(idx + 1);
+      preload(idx - 1);
+    }
+
+    function openGallery(name) {
+      list = GALLERIES[name] || [];
+      if (!list.length) return;
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      show(0);
+    }
+
+    function closeGallery() {
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-gallery]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        openGallery(btn.getAttribute('data-gallery'));
+      });
+    });
+
+    document.getElementById('lb-prev').addEventListener('click', function () { show(idx - 1); });
+    document.getElementById('lb-next').addEventListener('click', function () { show(idx + 1); });
+    document.getElementById('lb-close').addEventListener('click', closeGallery);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeGallery();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (lightbox.hidden) return;
+      if (e.key === 'Escape') closeGallery();
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+
+    let touchX = null;
+    lightbox.addEventListener('touchstart', function (e) {
+      touchX = e.touches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', function (e) {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (dx > 40) show(idx - 1);
+      else if (dx < -40) show(idx + 1);
+      touchX = null;
+    }, { passive: true });
+  }
+
   applyLang(lang);
   routeFromHash();
 })();
