@@ -151,6 +151,7 @@ header {
 }
 .nav-link:hover { color: var(--ink); }
 .nav-link.active { color: var(--ink); border-bottom-color: var(--gold); }
+.nav-link-cta { display: none; color: var(--gold); font-weight: 700; }
 
 .lang-toggle {
   display: flex;
@@ -221,6 +222,7 @@ header {
     padding: 10px 20px 18px;
   }
   .nav-links.open .nav-link { padding: 10px 4px; width: 100%; }
+  .nav-links.open .nav-link-cta { display: block; }
 }
 
 @media (max-width: 480px) {
@@ -686,7 +688,8 @@ form.contact-form {
 @media (max-width: 480px) {
   .form-row-2 { grid-template-columns: 1fr; }
 }
-.contact-form label {
+.contact-form label,
+.visit-form label {
   display: block;
   font-family: var(--font-mono);
   font-size: 10.5px;
@@ -695,8 +698,12 @@ form.contact-form {
   color: var(--muted);
   margin-bottom: 8px;
 }
+label.req::after { content: ' *'; color: var(--err); }
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.visit-form input,
+.visit-form textarea,
+.visit-form select {
   width: 100%;
   box-sizing: border-box;
   padding: 13px 14px;
@@ -707,11 +714,21 @@ form.contact-form {
   color: var(--ink);
 }
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.visit-form input:focus,
+.visit-form textarea:focus,
+.visit-form select:focus {
   border-color: var(--gold);
   outline: none;
 }
-.contact-form textarea { resize: vertical; }
+.contact-form textarea,
+.visit-form textarea { resize: vertical; }
+.visit-form select { height: 47px; }
+
+form.visit-form {
+  max-width: 760px;
+  margin: 0;
+}
 .form-note { margin: 16px 0 0; font-size: 12.5px; color: var(--muted); }
 .form-status { margin: 14px 0 0; font-family: var(--font-mono); font-size: 13px; display: none; }
 .form-status.show { display: block; }
@@ -768,9 +785,6 @@ footer {
 }
 .footer-brand { display: flex; align-items: center; gap: 12px; }
 .footer-brand img { width: 46px; height: 46px; object-fit: contain; }
-.footer-nav { display: flex; gap: 26px; flex-wrap: wrap; font-size: 12.5px; }
-.footer-nav a { text-decoration: none; color: var(--muted); }
-.footer-nav a:hover { color: var(--gold); }
 .footer-bottom {
   display: flex;
   justify-content: space-between;

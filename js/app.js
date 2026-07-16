@@ -1,5 +1,5 @@
 (function () {
-  const PAGES = ['home', 'about', 'projects', 'contact'];
+  const PAGES = ['home', 'about', 'projects', 'contact', 'visit'];
   const html = document.documentElement;
   const navLinks = document.querySelectorAll('.nav-link');
   const navLinksBox = document.getElementById('nav-links');
@@ -23,7 +23,7 @@
     });
     langBtns.bg.classList.toggle('active', lang === 'bg');
     langBtns.en.classList.toggle('active', lang === 'en');
-    updateSubmitLabel();
+    formControllers.forEach((f) => f.update());
   }
 
   function setLang(l) {
@@ -59,52 +59,62 @@
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // ---- Contact form (Web3Forms) ----
-  const form = document.getElementById('contact-form');
-  const submitBtn = document.getElementById('cf-submit');
-  const statusEl = document.getElementById('cf-status');
-  let sending = false;
-  let status = '';
+  // ---- Forms (Web3Forms) ----
+  const formControllers = [];
 
-  function updateSubmitLabel() {
-    const t = I18N[lang];
-    submitBtn.textContent = sending ? t.fSending : t.fSubmit;
-    submitBtn.disabled = sending;
-    if (status) {
-      statusEl.textContent = status === 'ok' ? t.fOk : t.fErr;
-      statusEl.className = 'form-status show ' + status;
-    } else {
-      statusEl.textContent = '';
-      statusEl.className = 'form-status';
-    }
-  }
+  function setupForm(formId, submitId, statusId, submitKey) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    const submitBtn = document.getElementById(submitId);
+    const statusEl = document.getElementById(statusId);
+    let sending = false;
+    let status = '';
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    sending = true;
-    status = '';
-    updateSubmitLabel();
-
-    const data = Object.fromEntries(new FormData(form));
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      const json = await res.json();
-      if (json.success) {
-        status = 'ok';
-        form.reset();
+    function update() {
+      const t = I18N[lang];
+      submitBtn.textContent = sending ? t.fSending : t[submitKey];
+      submitBtn.disabled = sending;
+      if (status) {
+        statusEl.textContent = status === 'ok' ? t.fOk : t.fErr;
+        statusEl.className = 'form-status show ' + status;
       } else {
+        statusEl.textContent = '';
+        statusEl.className = 'form-status';
+      }
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      sending = true;
+      status = '';
+      update();
+
+      const data = Object.fromEntries(new FormData(form));
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        if (json.success) {
+          status = 'ok';
+          form.reset();
+        } else {
+          status = 'err';
+        }
+      } catch (err) {
         status = 'err';
       }
-    } catch (err) {
-      status = 'err';
-    }
-    sending = false;
-    updateSubmitLabel();
-  });
+      sending = false;
+      update();
+    });
+
+    formControllers.push({ update });
+  }
+
+  setupForm('contact-form', 'cf-submit', 'cf-status', 'fSubmit');
+  setupForm('visit-form', 'vf-submit', 'vf-status', 'vfSubmit');
 
   applyLang(lang);
   routeFromHash();

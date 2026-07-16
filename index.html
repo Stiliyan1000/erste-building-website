@@ -125,12 +125,13 @@
         <a href="#about" class="nav-link" data-i18n="navAbout">За нас</a>
         <a href="#projects" class="nav-link" data-i18n="navProjects">Обекти</a>
         <a href="#contact" class="nav-link" data-i18n="navContact">Контакти</a>
+        <a href="#visit" class="nav-link nav-link-cta" data-i18n="navCta">Заяви оглед</a>
       </nav>
       <span class="lang-toggle">
         <button class="lang-btn" id="lang-bg" type="button">BG</button>
         <button class="lang-btn" id="lang-en" type="button">EN</button>
       </span>
-      <a href="#contact" class="nav-cta" data-i18n="navCta">Заяви оглед</a>
+      <a href="#visit" class="nav-cta" data-i18n="navCta">Заяви оглед</a>
     </div>
   </div>
 </header>
@@ -239,7 +240,7 @@
   <div class="cta-band">
     <div class="wrap">
       <h2 data-i18n="ctaTitle">Имате идея за обект? Да я обсъдим.</h2>
-      <a href="#contact" class="cta-band-btn"><span data-i18n="ctaBtn">Заяви консултация</span> →</a>
+      <a href="#visit" class="cta-band-btn"><span data-i18n="navCta">Заяви оглед</span> →</a>
     </div>
   </div>
 </div>
@@ -384,12 +385,12 @@
       </div>
       <div class="coords">42.5048° N, 27.4626° E</div>
     </div>
-    <form class="contact-form" id="contact-form" novalidate>
+    <form class="contact-form" id="contact-form">
       <input type="hidden" name="access_key" value="0ec13647-6bac-4efc-9695-39f7077f867b">
       <input type="hidden" name="subject" value="Ново запитване от сайта — Ерсте Билдинг">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
-        <label for="cf-name" data-i18n="fName">Име</label>
+        <label for="cf-name" class="req" data-i18n="fName">Име</label>
         <input id="cf-name" name="name" type="text" required>
       </div>
       <div class="form-row-2">
@@ -398,12 +399,12 @@
           <input id="cf-phone" name="phone" type="tel">
         </div>
         <div>
-          <label for="cf-email" data-i18n="fEmail">Имейл</label>
+          <label for="cf-email" class="req" data-i18n="fEmail">Имейл</label>
           <input id="cf-email" name="email" type="email" required>
         </div>
       </div>
       <div class="form-row">
-        <label for="cf-msg" data-i18n="fMsg">Съобщение</label>
+        <label for="cf-msg" class="req" data-i18n="fMsg">Съобщение</label>
         <textarea id="cf-msg" name="message" rows="5" required data-i18n-placeholder="fMsgPh" placeholder="Разкажете накратко за обекта..."></textarea>
       </div>
       <button type="submit" class="btn btn-gold" id="cf-submit" data-i18n="fSubmit">Изпрати запитване</button>
@@ -421,6 +422,89 @@
     </div>
   </div>
 </div>
+
+<!-- ============ VISIT REQUEST ============ -->
+<div class="page" id="page-visit">
+  <div class="page-hero blueprint">
+    <div class="wrap">
+      <div class="kicker" data-i18n="vKicker">ЗАЯВИ ОГЛЕД</div>
+      <h1 style="margin-bottom:20px"><span data-i18n="vTitle">Разкажете ни за</span> <em class="accent" data-i18n="vTitleEm">вашия обект</em></h1>
+      <p class="lead" data-i18n="vLead">Колкото повече знаем предварително, толкова по-полезен ще е огледът. Попълнете каквото можете — отнема две минути.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <form class="visit-form" id="visit-form">
+      <input type="hidden" name="access_key" value="0ec13647-6bac-4efc-9695-39f7077f867b">
+      <input type="hidden" name="subject" value="Заявка за оглед от сайта — Ерсте Билдинг">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <label for="vf-name" class="req" data-i18n="fName">Име</label>
+        <input id="vf-name" name="name" type="text" required>
+      </div>
+      <div class="form-row-2">
+        <div>
+          <label for="vf-phone" class="req" data-i18n="fPhone">Телефон</label>
+          <input id="vf-phone" name="phone" type="tel" required>
+        </div>
+        <div>
+          <label for="vf-email" class="req" data-i18n="fEmail">Имейл</label>
+          <input id="vf-email" name="email" type="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="vf-location" class="req" data-i18n="vfLocation">Населено място / адрес на обекта</label>
+        <input id="vf-location" name="location" type="text" required>
+      </div>
+      <div class="form-row-2">
+        <div>
+          <label for="vf-type" class="req" data-i18n="vfType">Тип обект</label>
+          <select id="vf-type" name="object_type" required>
+            <option value="" data-i18n="vfSelect">Изберете...</option>
+            <option value="Еднофамилна къща" data-i18n="vfType1">Еднофамилна къща</option>
+            <option value="Жилищна сграда" data-i18n="vfType2">Жилищна сграда</option>
+            <option value="Ремонт / реконструкция" data-i18n="vfType3">Ремонт / реконструкция</option>
+            <option value="Довършителни работи" data-i18n="vfType4">Довършителни работи</option>
+            <option value="Друго" data-i18n="vfType5">Друго</option>
+          </select>
+        </div>
+        <div>
+          <label for="vf-stage" data-i18n="vfStage">На какъв етап сте?</label>
+          <select id="vf-stage" name="project_stage">
+            <option value="" data-i18n="vfSelect">Изберете...</option>
+            <option value="Имам само идея" data-i18n="vfStage1">Имам само идея</option>
+            <option value="Имам проект и чертежи" data-i18n="vfStage2">Имам проект и чертежи</option>
+            <option value="Имам разрешение за строеж" data-i18n="vfStage3">Имам разрешение за строеж</option>
+            <option value="Строителството е започнало" data-i18n="vfStage4">Строителството е започнало</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div>
+          <label for="vf-area" data-i18n="vfArea">Приблизителна площ (кв. м)</label>
+          <input id="vf-area" name="area_sqm" type="text" inputmode="numeric">
+        </div>
+        <div>
+          <label for="vf-when" data-i18n="vfWhen">Кога искате да започнете?</label>
+          <select id="vf-when" name="start_timing">
+            <option value="" data-i18n="vfSelect">Изберете...</option>
+            <option value="Възможно най-скоро" data-i18n="vfWhen1">Възможно най-скоро</option>
+            <option value="До 3 месеца" data-i18n="vfWhen2">До 3 месеца</option>
+            <option value="До 6 месеца" data-i18n="vfWhen3">До 6 месеца</option>
+            <option value="Само проучвам" data-i18n="vfWhen4">Само проучвам</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="vf-msg" data-i18n="vfMsg">Допълнителни детайли</label>
+        <textarea id="vf-msg" name="message" rows="5" data-i18n-placeholder="vfMsgPh" placeholder="Опишете обекта, терена, достъпа..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold" id="vf-submit" data-i18n="vfSubmit">Изпрати заявка за оглед</button>
+      <p class="form-note" data-i18n="vfNote">Ще се свържем с вас в рамките на работния ден, за да уговорим час за оглед.</p>
+      <p class="form-status" id="vf-status"></p>
+    </form>
+  </div>
+</div>
 </main>
 
 <footer>
@@ -433,12 +517,6 @@
           <span class="brand-sub" data-i18n="brandSub">СТРОИТЕЛНА КОМПАНИЯ</span>
         </span>
       </div>
-      <nav class="footer-nav">
-        <a href="#home" data-i18n="navHome">Начало</a>
-        <a href="#about" data-i18n="navAbout">За нас</a>
-        <a href="#projects" data-i18n="navProjects">Обекти</a>
-        <a href="#contact" data-i18n="navContact">Контакти</a>
-      </nav>
     </div>
     <div class="footer-bottom">
       <span data-i18n="footCopy">© 2026 Ерсте Билдинг ЕООД. Всички права запазени.</span>
