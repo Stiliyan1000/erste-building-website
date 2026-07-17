@@ -62,20 +62,33 @@
   // ---- Hide header on scroll down (mobile only) ----
   const siteHeader = document.querySelector('header');
   let lastScrollY = window.scrollY;
+  let scrollDirection = null; // 'down' | 'up'
+  let directionStartY = window.scrollY;
 
   window.addEventListener('scroll', () => {
     if (window.innerWidth > 900) return;
     if (navLinksBox.classList.contains('open')) return;
 
     const y = window.scrollY;
-    const delta = y - lastScrollY;
 
     if (y < 80) {
       siteHeader.classList.remove('header-hidden');
-    } else if (delta > 8) {
-      siteHeader.classList.add('header-hidden');
-    } else if (delta < -8) {
-      siteHeader.classList.remove('header-hidden');
+      scrollDirection = null;
+      directionStartY = y;
+      lastScrollY = y;
+      return;
+    }
+
+    const newDirection = y > lastScrollY ? 'down' : y < lastScrollY ? 'up' : scrollDirection;
+
+    if (newDirection && newDirection !== scrollDirection) {
+      scrollDirection = newDirection;
+      directionStartY = lastScrollY;
+    }
+
+    if (scrollDirection && Math.abs(y - directionStartY) > 8) {
+      if (scrollDirection === 'down') siteHeader.classList.add('header-hidden');
+      else siteHeader.classList.remove('header-hidden');
     }
 
     lastScrollY = y;
