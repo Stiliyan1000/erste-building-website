@@ -104,6 +104,11 @@ header {
   background: rgba(15,26,33,0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
+  transition: transform 0.25s ease;
+}
+
+@media (max-width: 900px) {
+  header.header-hidden { transform: translateY(-100%); }
 }
 
 .nav-inner {

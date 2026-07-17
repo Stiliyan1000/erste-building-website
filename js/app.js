@@ -59,6 +59,28 @@
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
+  // ---- Hide header on scroll down (mobile only) ----
+  const siteHeader = document.querySelector('header');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth > 900) return;
+    if (navLinksBox.classList.contains('open')) return;
+
+    const y = window.scrollY;
+    const delta = y - lastScrollY;
+
+    if (y < 80) {
+      siteHeader.classList.remove('header-hidden');
+    } else if (delta > 8) {
+      siteHeader.classList.add('header-hidden');
+    } else if (delta < -8) {
+      siteHeader.classList.remove('header-hidden');
+    }
+
+    lastScrollY = y;
+  }, { passive: true });
+
   // ---- Forms (Web3Forms) ----
   const formControllers = [];
 
