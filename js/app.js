@@ -111,11 +111,62 @@
         separateDialCode: true,
         utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
       });
+
+      // ---- Live validation (flags numbers that are too long/short/invalid) ----
+      let utilsReady = false;
+      if (iti.promise && typeof iti.promise.then === 'function') {
+        iti.promise.then(function () { utilsReady = true; });
+      }
+
+      const errEl = document.createElement('div');
+      errEl.className = 'tel-error';
+      const wrap = input.closest('.iti');
+      if (wrap) wrap.insertAdjacentElement('afterend', errEl);
+
+      function validate() {
+        const val = input.value.trim();
+        if (!val || !utilsReady) {
+          errEl.textContent = '';
+          input.classList.remove('tel-invalid');
+          return true;
+        }
+        if (iti.isValidNumber()) {
+          errEl.textContent = '';
+          input.classList.remove('tel-invalid');
+          return true;
+        }
+        let msg = lang === 'bg' ? 'Невалиден телефонен номер.' : 'Invalid phone number.';
+        try {
+          const code = iti.getValidationError();
+          const errors = (window.intlTelInputUtils && window.intlTelInputUtils.validationError) || {};
+          const tooLong = typeof errors.TOO_LONG === 'number' ? errors.TOO_LONG : 3;
+          const tooShort = typeof errors.TOO_SHORT === 'number' ? errors.TOO_SHORT : 2;
+          if (code === tooLong) {
+            msg = lang === 'bg' ? 'Твърде много цифри за избраната държава.' : 'Too many digits for the selected country.';
+          } else if (code === tooShort) {
+            msg = lang === 'bg' ? 'Твърде малко цифри за избраната държава.' : 'Too few digits for the selected country.';
+          }
+        } catch (e) {}
+        errEl.textContent = msg;
+        input.classList.add('tel-invalid');
+        return false;
+      }
+
+      input.addEventListener('input', validate);
+      input.addEventListener('blur', validate);
+      input.addEventListener('countrychange', validate);
+
       // Replace the national number with the full international one on submit,
       // so FormData (read by setupForm's handler, registered later) picks it up.
-      input.form.addEventListener('submit', function () {
+      input.form.addEventListener('submit', function (e) {
         const raw = input.value.trim();
         if (!raw) return;
+        if (!validate()) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          input.focus();
+          return;
+        }
         let full = '';
         try { full = iti.getNumber(); } catch (e) { full = ''; }
         if (!full) {

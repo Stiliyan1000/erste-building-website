@@ -876,6 +876,15 @@ form.visit-form {
   color: var(--ink);
   border-color: var(--line-input);
 }
+input.tel-invalid {
+  border-color: var(--err);
+}
+.tel-error {
+  margin: 6px 0 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--err);
+}
 
 /* ===== FLOATING CONTACT BUTTONS ===== */
 .fab-stack {
