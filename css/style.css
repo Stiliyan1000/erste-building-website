@@ -854,6 +854,29 @@ form.visit-form {
 .form-status.ok { color: var(--ok); }
 .form-status.err { color: var(--err); }
 
+/* ===== INTL-TEL-INPUT (dark theme) ===== */
+.iti { width: 100%; display: block; }
+.iti__selected-flag { background: rgba(232,237,240,0.06); }
+.iti__selected-flag:hover,
+.iti--separate-dial-code .iti__selected-flag:hover { background: rgba(232,237,240,0.12); }
+.iti--separate-dial-code .iti__selected-dial-code { color: var(--ink); }
+.iti--separate-dial-code .iti__selected-flag { background: rgba(232,237,240,0.06); }
+.iti__country-list {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+.iti__country.iti__highlight { background: var(--panel-hover); }
+.iti__country-name { color: var(--ink); }
+.iti__dial-code { color: var(--muted); }
+.iti__divider { border-bottom-color: var(--line-strong); }
+.iti__search-input {
+  background: var(--bg);
+  color: var(--ink);
+  border-color: var(--line-input);
+}
+
 /* ===== FLOATING CONTACT BUTTONS ===== */
 .fab-stack {
   position: fixed;

@@ -94,6 +94,39 @@
     lastScrollY = y;
   }, { passive: true });
 
+  // ---- International phone inputs (intl-tel-input) ----
+  if (window.intlTelInput) {
+    ['cf-phone', 'vf-phone'].forEach(function (id) {
+      const input = document.getElementById(id);
+      if (!input) return;
+      const iti = window.intlTelInput(input, {
+        initialCountry: 'auto',
+        geoIpLookup: function (cb) {
+          fetch('https://ipapi.co/json')
+            .then(function (r) { return r.json(); })
+            .then(function (d) { cb(d && d.country_code ? d.country_code : 'bg'); })
+            .catch(function () { cb('bg'); });
+        },
+        preferredCountries: ['bg', 'gb', 'de', 'gr', 'ro', 'tr'],
+        separateDialCode: true,
+        utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
+      });
+      // Replace the national number with the full international one on submit,
+      // so FormData (read by setupForm's handler, registered later) picks it up.
+      input.form.addEventListener('submit', function () {
+        const raw = input.value.trim();
+        if (!raw) return;
+        let full = '';
+        try { full = iti.getNumber(); } catch (e) { full = ''; }
+        if (!full) {
+          const cc = iti.getSelectedCountryData().dialCode || '';
+          full = '+' + cc + raw.replace(/^0+/, '');
+        }
+        input.value = full;
+      });
+    });
+  }
+
   // ---- Forms (Web3Forms) ----
   const formControllers = [];
 
