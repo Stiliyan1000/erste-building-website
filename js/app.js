@@ -245,6 +245,9 @@
     }),
     'obekt-3': ['01'].map(function (n) {
       return 'assets/projects/obekt-3/' + n + '.jpg';
+    }),
+    'obekt-4': ['01', '02', '03', '04'].map(function (n) {
+      return 'assets/projects/obekt-4/' + n + '.jpg';
     })
   };
 
