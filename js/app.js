@@ -239,6 +239,9 @@
   const GALLERIES = {
     'obekt-1': ['01', '02', '03', '04', '05', '06', '07', '08'].map(function (n) {
       return 'assets/projects/obekt-1/' + n + '.jpg';
+    }),
+    'obekt-2': ['01', '02', '03'].map(function (n) {
+      return 'assets/projects/obekt-2/' + n + '.jpg';
     })
   };
 
