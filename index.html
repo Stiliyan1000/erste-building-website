@@ -543,7 +543,10 @@
 <div class="lightbox" id="lightbox" hidden>
   <button type="button" class="lightbox-close" id="lb-close" aria-label="Затвори">×</button>
   <button type="button" class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Предишна снимка">‹</button>
-  <img class="lightbox-img" id="lb-img" src="" alt="Снимка от обекта">
+  <div class="lightbox-panel" id="lb-panel">
+    <img class="lightbox-img lb-layer is-active" id="lb-a" src="" alt="Снимка от обекта">
+    <img class="lightbox-img lb-layer" id="lb-b" src="" alt="" aria-hidden="true">
+  </div>
   <button type="button" class="lightbox-nav lightbox-next" id="lb-next" aria-label="Следваща снимка">›</button>
   <div class="lightbox-count" id="lb-count"></div>
 </div>
